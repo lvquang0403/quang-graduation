@@ -23,6 +23,12 @@
       crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="js/jquery.coundown.js"></script>
+    <script>window.addEventListener('load', function() {
+      const audio = document.getElementById('background-audio');
+      audio.play().catch((error) => {
+        console.log("Autoplay blocked. Interaction required.", error);
+      });
+    });</script>
     <link rel="icon" type="image/png" href="image/logo.png" />
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23064379-20"></script>
@@ -38,9 +44,14 @@
 
     <!-- Github Button -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
+    
   </head>
 
   <body>
+    <audio id="background-audio" autoplay loop>
+      <source src="image/music.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
     <!-- Begin Preloader -->
     <div class="preloader-wrapper">
       <div class="preloader">
